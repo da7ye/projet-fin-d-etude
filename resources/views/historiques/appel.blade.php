@@ -28,7 +28,7 @@
             <tbody>
                 @foreach ($appeles as $appel)
                 <tr class=" hover:bg-gray-200">
-                    !<td class="py-4">{{ $appel->id }}</td>
+                    <td class="py-4">{{ $appel->id }}</td>
                     <td class="py-4">{{ $appel->num_tel }}</td>
                     <td class="py-4">{{ $appel->autre_num }}</td>
                     <td class="py-4">{{ $appel->date_appel }}</td>

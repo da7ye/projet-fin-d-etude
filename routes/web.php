@@ -6,6 +6,8 @@ use App\Http\Controllers\OffreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SidebarController;
 use App\Http\Controllers\ReclamationController;
+use App\Http\Controllers\Admin\UsersController;
+
 
 
 
@@ -57,6 +59,11 @@ Route::get('/historiques.service', [HistoriqueController::class, 'service'] )->n
 
 Route::resource('reclamations',ReclamationController::class);
 
+// administration routes
+
+Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+    Route::resource('users', 'UsersController');
+});
 
 
 // profile routes:

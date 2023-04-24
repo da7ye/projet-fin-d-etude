@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -41,4 +42,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+
+    }
+
+    public function isDirecteur(){
+// return if the user is an admin or not
+        return $this->roles()->where('name', 'directeur')->first();
+
+    }
+
+    public function hasAnyRole(){
+        return $this->roles()->where('name', 'directeur')->first();
+    }
+
+            // en cas plusieur roles ayant le permission:
+    // public function hasAnyRole(array $roles){
+    //     return $this->roles()->whereIn('name', $roles)->first();
+    // }
 }
