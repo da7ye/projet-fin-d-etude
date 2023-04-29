@@ -1,21 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 /*       the header: font       */
 .header{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    /* font-family: 'Acme', sans-serif; */
     font-size: 30px;
     color: rgb(226, 226, 226);
-    text-decoration:underline 3px ;
 }
 
 
 
 /*      navigation bar in the sideBar         */
 .navContainer{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     margin-top: 35px;
     display: flex; 
     flex-direction: column; 

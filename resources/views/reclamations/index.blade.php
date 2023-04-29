@@ -8,6 +8,14 @@
     <div class="container py-4">
         <div class="flex justify-between items-center mb-3">
             <div class="h4 mb-0">Réclamations</div>
+            <div class="w-full md:w-1/2 mx-auto p-4">
+                <form action="{{ route('reclamations.index') }}" method="GET"  class="flex items-center bg-white border rounded-lg shadow-lg overflow-hidden">
+                  <input type="text" name="search" class="bg-gray-100 appearance-none border-none w-full text-gray-800 mr-3 py-2 px-4 leading-tight focus:outline-none" name="search" placeholder="Search for a number...">
+                  <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">
+                    <i class="ti-search mr-2"></i> Search
+                  </button>
+                </form>
+              </div>
             <div class="">
                 <a href="{{ route('reclamations.create') }}" class="btn btn-primary">Ajouter une Réclamation</a>
             </div>
@@ -44,11 +52,11 @@
                             <td class="py-4">{{ $reclamation->contact }}</td>
                             <td class="py-4">{{ $reclamation->canal }}</td>
                             <td class="py-4">{{ $reclamation->typereclamation }}</td>
-                            <td class="py-4">{{ $reclamation->datesaisie }}</td>
+                            <td class="py-4">{{ $reclamation->created_at }}</td>
                             <td class="py-4">{{ $reclamation->delai_traitement }} jours</td>
                             <td class="py-4">{{ $reclamation->entite_saisie }}</td>
                             <td class="py-4">{{ $reclamation->entite_traitement }}</td>
-                            <td class="py-4">{{ $reclamation->saisie_par }}</td>
+                            <td class="py-4">{{  $reclamation->user ? $reclamation->user->name : '' }}</td>
                             <td class="py-4">{{ $reclamation->etat }}</td>
                             <td class="py-4">{{ $reclamation->description }}</td>
                             <td class="py-4">

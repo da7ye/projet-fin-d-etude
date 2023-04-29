@@ -1,1 +1,1 @@
-<img src="{{ asset('logo/Mauritel.jpg') }}" width="270px">
+<img src="{{ asset('logo/MoovW.png') }}" width="250px">

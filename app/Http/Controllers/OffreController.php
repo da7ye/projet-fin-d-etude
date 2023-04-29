@@ -10,10 +10,17 @@ use Illuminate\Support\Facades\Validator;
 class OffreController extends Controller
 {
     public function index() {
+        $search =request()->query('search');
 
-        $offres = Offre::orderBy('id','DESC')->paginate(5);
+        if(request()->query('search')){
+            $offres = Offre::with('user')->where('nomoffre', 'LIKE' , "%{$search}%")->paginate(5);
+        } else{
+            $offres = Offre::with('user')->orderBy('id', 'DESC')->paginate(5);
+        }
+            return view('offres.index', compact('offres'));
+            
 
-        return view('offres.index',['offres' => $offres]);
+
     }
 
     public function create() {

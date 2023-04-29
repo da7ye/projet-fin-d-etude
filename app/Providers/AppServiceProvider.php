@@ -28,15 +28,15 @@ class AppServiceProvider extends ServiceProvider
             return $user->isDirecteur();
         });
 
-        gate::define('manage-users',function ($user){
-            return $user->hasAnyRole();
-        });
+        // gate::define('manage-users ',function ($user){
+        //     return $user->hasAnyRole();
+        // });
 
 
                     // en cas plusieur roles ayant le permission:
-        // gate::define('manage-users',function ($user){
-        //     return $user->hasAnyRole(['directeur','administrateur']);
-        // });
+        gate::define('manage-users',function ($user){
+            return $user->hasAnyRole(['directeur','administrateur']);
+        });
 
         Gate::define('delete-users', function ($user) {
             return $user->isDirecteur();

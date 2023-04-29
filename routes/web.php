@@ -22,7 +22,10 @@ use App\Http\Controllers\Admin\UsersController;
 |
 */
 
-Route::get('/', [SidebarController::class, 'index'] );
+// Route::get('/', [SidebarController::class, 'index'] );
+Route::get('/', function () {
+    return redirect('/login');
+});
 
 Route::get('/dashboard', [SidebarController::class, 'dashboard'] )->name('dashboard');
 Route::get('/catalogues.index', [SidebarController::class,'catalogue'] )->name('catalogue');

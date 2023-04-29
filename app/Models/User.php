@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'entity_id'
     ];
 
     /**
@@ -42,6 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function entity()
+{
+    return $this->belongsTo(Entity::class);
+}
+    // public function entity()
+    // {
+    //     return $this->belongsTo('App\Models\Entity');
+    // }
 
     public function roles(){
         return $this->belongsToMany('App\Models\Role');
@@ -54,12 +63,12 @@ class User extends Authenticatable
 
     }
 
-    public function hasAnyRole(){
-        return $this->roles()->where('name', 'directeur')->first();
-    }
+    // public function hasAnyRole(){
+    //     return $this->roles()->where('name', 'directeur')->first();
+    // }
 
             // en cas plusieur roles ayant le permission:
-    // public function hasAnyRole(array $roles){
-    //     return $this->roles()->whereIn('name', $roles)->first();
-    // }
+    public function hasAnyRole(array $roles){
+        return $this->roles()->whereIn('name', $roles)->first();
+    }
 }

@@ -17,12 +17,9 @@
             <thead>
                 <tr class="bg-gray-300 text-gray-700">
                     <th class="py-4">id</th>
-                    <th class="py-4">numTel</th>
-                    <th class="py-4">autreTEl</th>
-                    <th class="py-4">dtAppel</th>
-                    <th class="py-4">duree</th>
-                    <th class="py-4">cout</th>
-                    <th class="py-4">balanceApres</th>
+                    <th class="py-4">num_tel</th>
+                    <th class="py-4">date_acivation</th>
+                    <th class="py-4">date_fin</th>
                 </tr>
             </thead>
             <tbody>

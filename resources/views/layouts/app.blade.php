@@ -23,9 +23,9 @@
     {{-- the side bar templat that i coppied from 'C:\xampp\htdocs\side-bar' begin here --}}
         <div class="flex" id="wrapper" x-data="{isOpen:true}">
             <!-- side bar -->
-            <div id="sidebar" class=" h-screen  overflow-y-auto bg-blue-800 transition-all duration-200 " 
+            <div id="sidebar" class=" h-screen  overflow-y-auto bg-[#285584] transition-all duration-200 " 
                 :class="isOpen? 'w-80':'w-0'">
-                <div class="w-full  h-auto  flex justify-center bg-blue-800">
+                <div class="w-full  h-auto  flex justify-center bg-[#285584]">
                         <!-- Logo -->
                     <div class="shrink-0 flex items-center">
                         <a href="{{ route('dashboard') }}">
@@ -41,7 +41,7 @@
 
             <!-- body -->
             <div id="body" class="w-full h-screen overflow-y-auto transition-all duration-200 ">
-                <div class="w-full h-auto p-[41px] flex justify-between bg-blue-800">      <!--  THE HEADER CSS -->
+                <div class="w-full h-auto p-[27px] flex justify-between bg-[#285584]">      <!--  THE HEADER CSS -->
                     <button @click.prevent=" isOpen =!isOpen"><i class="fa-sharp fa-solid fa-bars-staggered"></i></button>
                     <h1 class="header">SERVICE CLIENTELLE</h1>
                                 <!-- Settings Dropdown -->

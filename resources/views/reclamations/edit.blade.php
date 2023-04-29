@@ -43,14 +43,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="datesaisie" class="form-label">date de saisie</label>
-                        <input type="date" name="datesaisie" id="datesaisie" placeholder="Donnez le dt SAISIE de l'offre" class="form-control @error('datesaisie') is-invalid @enderror" value="{{old('datesaisie',$reclamation->datesaisie)}}">
-                        @error('datesaisie')
-                            <p class="invalid-feedback">{{ "La date est obligatoire" }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
                         <label for="delai_traitement" class="form-label">delai_traitement</label>
                         <input type="number" name="delai_traitement" id="delai_traitement" placeholder="Donnez l'delai_traitement de l'offre" class="form-control @error('delai_traitement') is-invalid @enderror" value="{{old('delai_traitement',$reclamation->delai_traitement)}}">
                         @error('delai_traitement')

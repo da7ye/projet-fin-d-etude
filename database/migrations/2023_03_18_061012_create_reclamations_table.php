@@ -6,13 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('reclamations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->integer('contact');
             $table->string('canal');
             $table->string('typereclamation');
@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('delai_traitement');
             $table->string('entite_saisie');
             $table->string('entite_traitement');
-            $table->string('saisie_par');
             $table->string('etat');
             $table->string('description');
             $table->timestamps();

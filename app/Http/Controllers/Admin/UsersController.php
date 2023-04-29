@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\entity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -22,7 +23,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('administrations.index')->with('users', $users);
+        $entities = entity::all();
+        return view('administrations.index', compact('users', 'entities'));
     }
 
     /**
@@ -32,25 +34,7 @@ class UsersController extends Controller
     {
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(User $user)
     {
         if (Gate::denies('edit-users')) {
@@ -73,6 +57,8 @@ class UsersController extends Controller
         $user->roles()->sync($request->roles);
         $user->name = $request->name;
         $user->email = $request->email;
+
+
         $user->save();
 
         return redirect('admin/users');

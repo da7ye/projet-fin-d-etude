@@ -1,15 +1,22 @@
 <x-app-layout>
-    <div class="bg-orange-500 my-3 py-3">
-        <div class="container">
-            <div class="h3 text-center text-blue">Gestion des Offres</div>
-        </div>
-    </div>
-
+    
+    
+    
     <div class="container py-2">
         <div class="d-flex justify-content-between py-3">
             <div class="h4">Offres</div>
+            <div class="w-full md:w-1/2 mx-auto p-4">
+                <form action="{{ route('offres') }}" method="GET"  class="flex items-center bg-white border rounded-lg shadow-lg overflow-hidden">
+                  <input type="text" name="search" class="bg-gray-100 appearance-none border-none w-full text-gray-800 mr-3 py-2 px-4 leading-tight focus:outline-none" name="search" placeholder="Search for a number...">
+                  <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">
+                    <i class="ti-search mr-2"></i> Search
+                  </button>
+                </form>
+              </div>
             <div class="">
+                @can('edit-users')
                 <a href="{{ route('offres.create') }}" class="btn btn-primary">Ajouter un offre</a>
+                @endcan
             </div>
         </div>
 

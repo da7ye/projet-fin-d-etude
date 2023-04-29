@@ -41,13 +41,6 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="datesaisie" class="form-label">date de saisie</label>
-                        <input type="date" name="datesaisie" id="datesaisie" placeholder="Donnez le dt SAISIE de l'offre" class="form-control @error('datesaisie') is-invalid @enderror" value="{{old('datesaisie')}}">
-                        @error('datesaisie')
-                            <p class="invalid-feedback">{{ "La date est obligatoire" }}</p>
-                        @enderror
-                    </div>
 
                     <div class="mb-3">
                         <label for="delai_traitement" class="form-label">delai_traitement</label>
@@ -58,15 +51,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="entite_saisie">entite saisie</label>
-                        <select class="form-control mb-3" id="entite_saisie" name="entite_saisie" required>
-                            <option value="Centre IN" {{ old('entite_saisie') == 'Centre IN' ? 'selected' : '' }}>Centre IN</option>
-                            <option value="Agence TVZ" {{ old('entite_saisie') == 'Agence TVZ' ? 'selected' : '' }}>Agence TVZ</option>
-                            <option value="Centre SMSC" {{ old('entite_saisie') == 'Centre SMSC' ? 'selected' : '' }}>Centre SMSC</option>
-                            <option value="Agence SKK" {{ old('entite_saisie') == 'Agence SKK' ? 'selected' : '' }}>Agence SKK</option>
-                            <option value="Agence ARAFAT" {{ old('entite_saisie') == 'Agence ARAFAT' ? 'selected' : '' }}>Agence ARAFAT</option>
-                        </select>
-                    </div>
+
                     
                     <div class="form-group">
                         <label for="entite_traitement">entite de traitement</label>
@@ -78,14 +63,7 @@
                             <option value="Agence ARAFAT" {{ old('entite_traitement') == 'Agence ARAFAT' ? 'selected' : '' }}>Agence ARAFAT</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="saisie_par" class="form-label">saisie par</label>
-                        <input type="text" name="saisie_par" id="saisie_par" placeholder="saisie par" class="form-control @error('saisie_par') is-invalid @enderror" value="{{old('saisie_par')}}">
-                        @error('saisie_par')
-                            <p class="invalid-feedback">{{ "Le nom de saisie est obligatoire" }}</p>
-                        @enderror
-                    </div>
-                    
+
                     <div class="form-group">
                         <label for="etat">Etat</label>
                         <select class="form-control mb-3" id="etat" name="etat" required>

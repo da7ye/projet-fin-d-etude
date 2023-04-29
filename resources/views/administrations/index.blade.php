@@ -2,9 +2,13 @@
     <div class="container">
         <div class="row my-32 justify-center">
             <div class="col-md-11">
-                <div class="card">
+                <div class="d-flex justify-content-between py-3">
                     <div class="card-header">Liste des utilisateurs</div>
-
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="w-64 btn btn-primary">Ajoutez nouveau utilisateur</a>
+                    @endif
+                </div>
+                <div class="card">
                     <div class="card-body">
                         <table class="table">
                             <thead>
@@ -12,6 +16,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">nom</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">entite</th>
                                     <th scope="col">Role</th>
                                     <th scope="col">action</th>
                                 </tr>
@@ -22,7 +27,14 @@
                                     <th scope="row">{{ $user->id }}</th>
                                     <th>{{ $user->name }}</th>
                                     <th>{{ $user->email }}</th>
-                                    <td>{{ implode(',',$user->roles()->get()->pluck('name')->toArray()) }}</td>
+                                    <th>
+                                        @foreach ($entities as $entity)
+                                            @if ($entity->id == $user->entity_id)
+                                                {{ $entity->name }}
+                                            @endif
+                                        @endforeach
+                                    </th>                        
+                                   <td>{{ implode(',',$user->roles()->get()->pluck('name')->toArray()) }}</td>
                                     
                                     <th>
                                         @can('edit-users')

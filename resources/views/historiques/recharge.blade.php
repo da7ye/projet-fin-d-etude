@@ -17,9 +17,9 @@
             <thead>
                 <tr class="bg-gray-300 text-gray-700">
                     <th class="py-4">id</th>
-                    <th class="py-4">numTel</th>
-                    <th class="py-4">num carte</th>
-                    <th class="py-4">date recharge</th>
+                    <th class="py-4">num_tel</th>
+                    <th class="py-4">num_carte</th>
+                    <th class="py-4">date_recharge</th>
                     <th class="py-4">cout</th>
                 </tr>
             </thead>
