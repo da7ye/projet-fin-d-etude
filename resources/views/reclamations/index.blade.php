@@ -1,23 +1,23 @@
 <x-app-layout>
-    <div class="bg-gray-100 py-3">
+    {{-- <div class="bg-[#285584] py-3">
         <div class="container">
-            <div class="h3 text-center text-primary mb-0">Gestion des Réclamations</div>
+            <div class="h3 text-center text-gray-100  mb-0">Gestion des Réclamations</div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container py-4">
         <div class="flex justify-between items-center mb-3">
             <div class="h4 mb-0">Réclamations</div>
             <div class="w-full md:w-1/2 mx-auto p-4">
                 <form action="{{ route('reclamations.index') }}" method="GET"  class="flex items-center bg-white border rounded-lg shadow-lg overflow-hidden">
-                  <input type="text" name="search" class="bg-gray-100 appearance-none border-none w-full text-gray-800 mr-3 py-2 px-4 leading-tight focus:outline-none" name="search" placeholder="Search for a number...">
-                  <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">
+                  <input type="text" name="search" class="bg-gray-100 appearance-none border-none w-full text-gray-800  py-2 px-4 leading-tight focus:outline-none" name="search" placeholder="Rechercher par numero Telephone...">
+                  <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded">
                     <i class="ti-search mr-2"></i> Search
                   </button>
                 </form>
               </div>
             <div class="">
-                <a href="{{ route('reclamations.create') }}" class="btn btn-primary">Ajouter une Réclamation</a>
+                <a href="{{ route('reclamations.create') }}" class="bg-orange-500    btn btn-primary">Ajouter une Réclamation</a>
             </div>
         </div>
 
@@ -27,25 +27,22 @@
             </div>
         @endif
 
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="px-6 py-4">
-                <table class="w-full table-auto text-center">
-                    <thead>
-                        <tr class="bg-gray-200 text-gray-700">
-                            <th class="py-4">Contact</th>
-                            <th class="py-4">Canal</th>
-                            <th class="py-4">Type de Réclamation</th>
-                            <th class="py-4">Date de Saisie</th>
-                            <th class="py-4">Délai de Traitement</th>
-                            <th class="py-4">Entité de Saisie</th>
-                            <th class="py-4">Entité de Traitement</th>
-                            <th class="py-4">Saisie Par</th>
-                            <th class="py-4">État</th>
-                            <th class="py-4">Description</th>
-                            <th class="py-4">Action</th>
+        <div class="card border-0 shadow-lg ">
+            <div class="card-body">
+                <table class="table table-striped">
+                        <tr class="">
+                            <th class="">Contact</th>
+                            <th class="">Canal</th>
+                            <th class="">Type de Réclamation</th>
+                            <th class="">Date de Saisie</th>
+                            <th class="">Délai de Traitement</th>
+                            <th class="">Entité de Saisie</th>
+                            <th class="">Entité de Traitement</th>
+                            <th class="">Saisie Par</th>
+                            <th class="">État</th>
+                            <th class="">Description</th>
+                            <th class="">Action</th>
                         </tr>
-                    </thead>
-                    <tbody>
                         @if($reclamations->isNotEmpty())
                         @foreach ($reclamations as $reclamation)
                         <tr class="bg-white">
@@ -54,7 +51,7 @@
                             <td class="py-4">{{ $reclamation->typereclamation }}</td>
                             <td class="py-4">{{ $reclamation->created_at }}</td>
                             <td class="py-4">{{ $reclamation->delai_traitement }} jours</td>
-                            <td class="py-4">{{ $reclamation->entite_saisie }}</td>
+                            <td class="py-4">Centre Principale</td>
                             <td class="py-4">{{ $reclamation->entite_traitement }}</td>
                             <td class="py-4">{{  $reclamation->user ? $reclamation->user->name : '' }}</td>
                             <td class="py-4">{{ $reclamation->etat }}</td>

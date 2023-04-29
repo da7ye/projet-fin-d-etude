@@ -38,13 +38,13 @@
                                     
                                     <th>
                                         @can('edit-users')
-                                        <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="{{route('admin.users.edit', $user->id)}}" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                         @endcan
                                         @can('delete-users')
                                         <form action="{{route('admin.users.destroy', $user->id)}}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                                            <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
                                         </form>
                                         @endcan                            
                                     </th>

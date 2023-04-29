@@ -1,19 +1,15 @@
 <x-app-layout>
-    <div class="bg-orange-500 my-3 py-3">
-        <div class="container">
-            <div class="h3 text-center text-blue">Gestion des Reclamation</div>
-        </div>
-    </div>
+    
 
     <div class="container py-2">
         <div class="d-flex justify-content-between py-3">
             <div class="h4">Ajouter un nouveau Reclamation</div>
             <div class="">
-                <a href=" {{route('reclamations.index')}} " class="btn btn-primary">Annuler</a>
+                <a href=" {{route('reclamations.index')}} " class="bg-orange-500 text-white btn btn">Annuler</a>
             </div>
         </div>
 
-        <form action="{{ route('reclamations.store') }}" method="post" enctype="multipart/form-data" > 
+        <form action="{{ route('reclamations.store') }}" method="post" enctype="multipart/form-data" class="px-64"> 
             @csrf
             <div class="card border-0 shadow-lg ">
                 <div class="card-body">
@@ -81,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary mt-3">Enregistrer</button>
+            <button class="btn btn mt-3 text-white bg-orange-500">Enregistrer</button>
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
