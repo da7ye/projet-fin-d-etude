@@ -36,7 +36,7 @@
         
             <div class="flex items-center justify-end mt-4">
             
-                <x-primary-button class="w-full mt-6 py-2 rounded bg-blue-500 text-gray-100 pl-[130px] focus:outline-none">
+                <x-primary-button class="w-full mt-6 py-2 rounded bg-orange-600 text-gray-100 pl-[130px] focus:outline-none">
                     {{ __('Log in') }}
                 </x-primary-button>
             </div>

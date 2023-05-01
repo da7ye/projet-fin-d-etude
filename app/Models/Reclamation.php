@@ -20,6 +20,7 @@ class Reclamation extends Model
         'contact',
         'typereclamation',
         'delai_traitement',
+        'wilaya',
         'entite_traitement',
         'etat',
         'description',

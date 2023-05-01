@@ -15,9 +15,9 @@
                     <i class="ti-search mr-2"></i> Search
                   </button>
                 </form>
-              </div>
+            </div>
             <div class="">
-                <a href="{{ route('reclamations.create') }}" class="bg-orange-500    btn btn-primary">Ajouter une Réclamation</a>
+                <a href="{{ route('reclamations.create') }}" class="bg-orange-500 text-white hover:bg-orange-600 btn ">Ajouter une Réclamation</a>
             </div>
         </div>
 
@@ -31,35 +31,36 @@
             <div class="card-body">
                 <table class="table table-striped">
                         <tr class="">
-                            <th class="">Contact</th>
-                            <th class="">Canal</th>
-                            <th class="">Type de Réclamation</th>
-                            <th class="">Date de Saisie</th>
-                            <th class="">Délai de Traitement</th>
-                            <th class="">Entité de Saisie</th>
-                            <th class="">Entité de Traitement</th>
-                            <th class="">Saisie Par</th>
-                            <th class="">État</th>
-                            <th class="">Description</th>
-                            <th class="">Action</th>
+                            <th class="text-center">Contact</th>
+                            <th class="text-center">Canal</th>
+                            <th class="text-center">Type de Réclamation</th>
+                            <th class="text-center">Date de Saisie</th>
+                            <th class="text-center">Délai de Traitement</th>
+                            <th class="text-center">Entité de Saisie</th>
+                            <th class="text-center">Entité de Traitement</th>
+                            <th class="text-center">Saisie Par</th>
+                            <th class="text-center">État</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Action</th>
                         </tr>
                         @if($reclamations->isNotEmpty())
                         @foreach ($reclamations as $reclamation)
                         <tr class="bg-white">
-                            <td class="py-4">{{ $reclamation->contact }}</td>
-                            <td class="py-4">{{ $reclamation->canal }}</td>
-                            <td class="py-4">{{ $reclamation->typereclamation }}</td>
-                            <td class="py-4">{{ $reclamation->created_at }}</td>
-                            <td class="py-4">{{ $reclamation->delai_traitement }} jours</td>
-                            <td class="py-4">Centre Principale</td>
-                            <td class="py-4">{{ $reclamation->entite_traitement }}</td>
-                            <td class="py-4">{{  $reclamation->user ? $reclamation->user->name : '' }}</td>
-                            <td class="py-4">{{ $reclamation->etat }}</td>
-                            <td class="py-4">{{ $reclamation->description }}</td>
-                            <td class="py-4">
+                            <td class="py-4 text-center">{{ $reclamation->contact }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->canal }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->typereclamation }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->created_at }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->delai_traitement }} jours</td>
+                            <td class="py-4 text-center">Centre skk</td>
+                            <td class="py-4 text-center">{{ $reclamation->entite_traitement }}</td>
+                            <td class="py-4 text-center">{{  $reclamation->user ? $reclamation->user->name : '' }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->etat }}</td>
+                            <td class="py-4 text-center">{{ $reclamation->description }}</td>
+                            <td class="py-4 text-center">
                                 <div class="flex justify-center items-center gap-2">
                                     {{-- <a href="{{ route('reclamations.edit',$reclamation->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2">mod</a>
                                     <a href="#" onclick="deleteReclamation({{ $reclamation->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mr-2">sup</a> --}}
+                                    <a href="{{ route('reclamations.show',$reclamation->id) }}" class="btn btn-outline-primary"><i class="fa-sharp fa-solid fa-eye" style="color: #511f26;"></i></a>
                                 <a href="{{ route('reclamations.edit',$reclamation->id) }}" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a href="#" onclick="deleteReclamation({{ $reclamation->id }})" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>
                                 

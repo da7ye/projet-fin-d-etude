@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();            
             $table->unsignedBigInteger('num_tel')->unsigned();
             $table->foreign('num_tel')->references('num_tel')->on('clients')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('autre_num');
-            $table->dateTime('date_acivation');
+            $table->integer('nom');
+            $table->dateTime('date_activation');
             $table->dateTime('date_fin');
             $table->timestamps();
         });

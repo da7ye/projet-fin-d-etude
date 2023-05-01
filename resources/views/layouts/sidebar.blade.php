@@ -5,13 +5,13 @@
 
 
                 <div class="navContainer">
-                    <a href="{{ route('dashboard') }}" class="nav"><i id="iTag" class="fa-solid fa-house"></i>Dashboard</a>
-                    <a href="{{ route('offres') }}" class="nav"><i id="iTag" class="fa-sharp fa-solid fa-pen-to-square"></i>offres</a>
-                    <a href="{{ route('catalogue') }}" class="nav"><i id="iTag" class="fa-solid fa-book"></i></i> Catalogues</a>
-                    <a href="{{ route('reclamations.index') }}" class="nav"><i id="iTag" class="fa-solid fa-circle-stop"></i>Reclamations</a>
-                    <a href="{{ route('statistique') }}" class="nav"><i id="iTag" class="fa-solid fa-water"></i>Statistiques</a>
-                    <a href="{{ route('historiques.appel') }}" class="nav"><i id="iTag" class="fa-solid fa-phone-volume"></i> Historiques</a>
-                    <a href="{{ route('admin.users.index') }}" class="nav"><i id="iTag" class="fa-solid fa-user"></i> Adminstration</a>
+                    <a href="{{ route('dashboard') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-house"></i>Dashboard</div></a>
+                    <a href="{{ route('offres') }}" class="nav"><div class=""><i id="iTag" class="fa-sharp fa-solid fa-pen-to-square"></i>Offres</div></a>
+                    <a href="{{ route('catalogue') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-book"></i>Catalogues</div></a>
+                    <a href="{{ route('reclamations.index') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-circle-stop"></i>Reclamations</div></a>
+                    <a href="{{ route('statistique') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-water"></i>Statistiques</div></a>
+                    <a href="{{ route('historiques.appel') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-phone-volume"></i> Historiques</div></a>
+                    <a href="{{ route('admin.users.index') }}" class="nav"><div class=""><i id="iTag" class="fa-solid fa-user"></i> Adminstration</div></a>
 
 
 

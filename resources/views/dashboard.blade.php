@@ -7,7 +7,7 @@
     </x-slot> --}}
 
     <div class="py-12">
-        <div class="max-w-10xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-10xl mx-auto pt-64 sm:px-6 lg:px-8">
             <div class="text-center bg-white overflow-hidden shadow-sm sm:rounded-lg ">
                 <div class="p-6 text-gray-900 text-5xl">
                     {{ __("MOOV MAURITEL Administration pannel") }}

@@ -3,6 +3,8 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
+
+
 /*       the header: font       */
 .header{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
@@ -15,8 +17,10 @@
 
 /*      navigation bar in the sideBar         */
 .navContainer{
-    font-family:Arial, Helvetica, sans-serif;
-    margin-top: 35px;
+    /* font-family:Arial, Helvetica, sans-serif; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    margin-top: 34px;
+    
     display: flex; 
     flex-direction: column; 
     width: 100%; 
@@ -27,11 +31,12 @@
 
 .nav{
     /* margin-left: 4px; */
+    
     gap: 3px;
-    padding-top: 0.6rem  ; 
+    padding-top: 0.6rem  ;   
     padding-bottom: 0.6rem  ; 
     color: #ffffff; 
-    font-size: 25px ;
+    font-size: 30px ;
     /* line-height: 1.75rem;  */
 
 
@@ -39,15 +44,16 @@
 #iTag{
     font-size: 20px;
     color: #fcfcfc;
-    margin: 0px 6px 6px 8px;;
+    margin: 0px 16px 6px 18px;
     padding: 11px 11px;
-    background: #161616;
+    background: #083749;
     border-radius: 6px;
 }
+
 .nav:hover{
     background-color: #fcfcfc;
     color: rgb(0, 0, 0);
-
+    /* border-radius: 50px 0px 0px 50px ; */
 }
 
 .ahis{
@@ -60,10 +66,11 @@
 }
 .ahis:is(:link, :active, :visited).active{
     color: rgb(7, 7, 7);
-    background-color: #ffffff;
+    background-color: #ad0000;
 }
 
 .nav:is(:link, :active, :visited).active{
-    color: rgb(7, 7, 7);
-    background-color: #ffffff;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    border-radius: 50px 0px 0px 50px ;
 }

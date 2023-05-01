@@ -1,7 +1,7 @@
 <x-app-layout>
-    <nav class="bg-gray-800 px-4 py-3">
+    <nav class="bg-[#285584] px-4 py-3">
         <div class="flex justify-between items-center">
-            <div class="flex gap-16">
+            <div class="flex gap-16 ">
                 <a href="{{route('historiques.appel')}}"  class="ahis">
                     appel 
                 </a>

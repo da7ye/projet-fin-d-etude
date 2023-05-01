@@ -7,6 +7,7 @@ use App\Models\Appele;
 use App\Models\sms;
 use App\Models\internet;
 use App\Models\recharge;
+use App\Models\service;
 
 class HistoriqueController extends Controller
 {
@@ -58,6 +59,13 @@ class HistoriqueController extends Controller
         return view('historiques.recharge', compact('recharges'));
     }
     public function service(){
-        return view('historiques.service');
+        $search = request()->query('search');
+
+        if ($search) {
+            $services = service::where('num_tel', 'LIKE', '%' . $search . '%')->get();
+        } else {
+            $services = collect();
+        }
+        return view('historiques.service', compact('services'));
     }
 }

@@ -17,7 +17,7 @@ class ReclamationController extends Controller
         if(request()->query('search')){
             $reclamations = Reclamation::with('user')->where('contact', 'LIKE' , "%{$search}%")->paginate(5);
         } else{
-            $reclamations = Reclamation::with('user')->orderBy('id', 'DESC')->paginate(5);
+            $reclamations = Reclamation::with('user')->orderBy('id', 'DESC')->paginate(4);
         }
 
         return view('reclamations.index', compact('reclamations'));
@@ -57,35 +57,15 @@ class ReclamationController extends Controller
     }
     
 
-    // public function store(Request $request ) {
-    //     $validator = Validator::make($request->all(),[
-    //         'canal' => 'required',
-    //         'contact' => 'required',
-    //         'typereclamation' => 'required',
-    //         'datesaisie' => 'required',
-    //         'delai_traitement' => 'required',
-    //         'entite_saisie' => 'required',
-    //         'entite_traitement' => 'required',
-    //         'saisie_par' => 'required',
-    //         'etat' => 'required',
-    //         'description' => 'required'
-
-    //     ]);
-
-    //     if ( $validator->passes() ) {
-            
-    //         $reclamation = Reclamation::create($request->post());
-
-    //         return redirect()->route('reclamations.index')->with('success', 'Reclamation ajoutez avec success.');
-
-    //     } else {
-
-    //         return redirect()->route('reclamations.create')->withErrors($validator)->withInput();
-    //     }
-    // }
     public function edit(Reclamation $reclamation){
 
         return view('reclamations.edit',['reclamation' => $reclamation]);
+
+    }
+
+    public function show(Reclamation $reclamation){
+
+        return view('reclamations.show',['reclamation' => $reclamation]);
 
     }
 

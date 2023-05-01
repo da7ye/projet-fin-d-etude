@@ -15,7 +15,7 @@ class OffreController extends Controller
         if(request()->query('search')){
             $offres = Offre::with('user')->where('nomoffre', 'LIKE' , "%{$search}%")->paginate(5);
         } else{
-            $offres = Offre::with('user')->orderBy('id', 'DESC')->paginate(5);
+            $offres = Offre::with('user')->orderBy('id', 'DESC')->paginate(4);
         }
             return view('offres.index', compact('offres'));
             

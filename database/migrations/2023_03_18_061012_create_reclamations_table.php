@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('contact');
             $table->string('canal');
             $table->string('typereclamation');
+            $table->string('wilaya');
             // $table->date('datesaisie');
             $table->string('delai_traitement');
             // $table->string('entite_saisie');

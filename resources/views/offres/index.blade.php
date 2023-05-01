@@ -15,7 +15,7 @@
               </div>
             <div class="">
                 @can('edit-users')
-                <a href="{{ route('offres.create') }}" class="bg-orange-500 btn hover:bg-orange-600">Ajouter une offre</a>
+                <a href="{{ route('offres.create') }}" class="bg-orange-500 btn text-white hover:bg-orange-600">Ajouter une offre</a>
                 @endcan
             </div>
         </div>
@@ -30,12 +30,12 @@
             <div class="card-body">
                 <table class="table table-striped">
                     <tr>
-                        <th>ID</th>
-                        <th>Nom d'offre</th>
-                        <th>date debut</th>
-                        <th>date fin</th>
-                        <th>Etat</th>
-                        <th>description</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nom d'offre</th>
+                        <th class="text-center">date debut</th>
+                        <th class="text-center">date fin</th>
+                        <th class="text-center">Etat</th>
+                        <th class="text-center">description</th>
                         <th>Action</th>
                     </tr>
 
@@ -43,13 +43,13 @@
                     @foreach ($offres as $offre)
                         
                     <tr>
-                        <td>{{ $offre->id }}</td>
-                        <td>{{ $offre->nomoffre }}</td>
-                        <td>{{ $offre->dtdebut }}</td>
-                        <td>{{ $offre->dtfin }}</td>
-                        <td>{{ $offre->etat }}</td>
-                        <td>{{ $offre->description }}</td>
-                        <td>
+                        <td class="py-4 text-center">{{ $offre->id }}</td>
+                        <td class="py-4 text-center">{{ $offre->nomoffre }}</td>
+                        <td class="py-4 text-center">{{ $offre->dtdebut }}</td>
+                        <td class="py-4 text-center">{{ $offre->dtfin }}</td>
+                        <td class="py-4 text-center">{{ $offre->etat }}</td>
+                        <td class="py-4 text-center" style="max-width: 500px; white-space: pre-wrap;">{{ $offre->description }}</td>
+                        <td class="py-4 text-center">
                             <a href="{{ route('offres.edit', $offre->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <a href="#" onclick="deleteOffer({{ $offre->id }})" class="btn btn-danger btn-sm">Delete</a>
 

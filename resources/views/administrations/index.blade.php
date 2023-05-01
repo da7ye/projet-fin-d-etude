@@ -5,7 +5,7 @@
                 <div class="d-flex justify-content-between py-3">
                     <div class="card-header">Liste des utilisateurs</div>
                     @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="w-64 btn btn-primary">Ajoutez nouveau utilisateur</a>
+                    <a href="{{ route('register') }}" class="w-64 btn bg-orange-500 text-white hover:bg-orange-600">Ajoutez nouveau utilisateur</a>
                     @endif
                 </div>
                 <div class="card">
